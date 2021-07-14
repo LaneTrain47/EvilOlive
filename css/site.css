@@ -1,3 +1,19 @@
 main>.container {
     padding: 60px 15px 0;
 }
+
+.text-LinkedInBlue {
+    color: #1163bf
+}
+
+.text-GitHubPurple {
+    color: #7a319a
+}
+
+.text-YouTubeRed {
+    color: #ff0a03
+}
+
+.text-TwitterBlue {
+    color: #1da1f3
+}
