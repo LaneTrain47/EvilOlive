@@ -1,2 +1,0 @@
-# JavaScriptTemplate
- JavaScriptTemplate
