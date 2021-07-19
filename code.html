@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>EvilOlive: A Coding Challenge</title>
+    <title>EvilOlive | The Code</title>
     <link rel="shortcut icon" type="image/x-icon" href="/img/AppIcon-browser_tab.png">
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <meta charset="utf-8">
@@ -16,122 +16,122 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="d-flex flex-column h-100">
-
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <img src="/img/AppIcon-small.png">
-            <a class="navbar-brand" href="/JavaScriptTemplate/index.html">EvilOlive</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/app.html">The App</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/code.html">The Code</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://mattlane.info">About Me</a>
-                    </li>
-                </ul>
-            </div>
+<body class="d-flex flex-column h-100" style="background-color:lightgray"></body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+        <img src="/img/AppIcon-small.png">
+        <a class="navbar-brand" href="/JavaScriptTemplate/index.html">EvilOlive</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/app.html">The App</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/code.html">The Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://mattlane.info">About Me</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <main class="flex-shrink-0">
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col-6">
-                    <div class="row">
-                        <div class="col border-bottom border-dark text-center">
-                            <h1>What's under the hood?</h1>
+<main class="flex-shrink-0">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col border-bottom border-dark text-center">
+                        <h1>What makes this olive so evil?</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-3">
+
+                        <div class="row">
+                            <img src="/img/Olive01.png" alt="">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col mt-3">
-
-                            <div class="row">
-                                <img src="/img/Olive01.png" alt="">
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-1"></div>
-                <div class="col-5">
-                    <div class="row mt-5">
-                        <p>The code is structured in three functions:
-                        </p>
-                        <p><strong>getValues</strong> accepts(gets) the user input from the page. It utilizes
-                            <strong>getElementById</strong> to pull the values from the page. It passes those values to
-                            the <strong>generateNumbers</strong> function, which returns an array of values and passes
-                            that array to the <strong>displayNumbers</strong> function.</p>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-5">
+                <div class="row mt-5">
+                    <p>The code is structured in three functions:
+                    </p>
+                    <p><strong>getValues</strong> accepts(gets) the user input from the page. It utilizes
+                        <strong>getElementById</strong> to pull the values from the page. It passes those values to
+                        the <strong>generateNumbers</strong> function, which returns an array of values and passes
+                        that array to the <strong>displayNumbers</strong> function.</p>
 
-                        <p><strong>generateNumbers</strong> takes in two parameters: <strong>startValue</strong> and
-                            <strong>endValue</strong>. We create a variable (numbers) that holds an array. A
-                            <strong>for</strong> loop is used to generate all of the numbers between
-                            <strong>startValue</strong> and <strong>endValue</strong>.</p>
+                    <p><strong>generateNumbers</strong> takes in two parameters: <strong>startValue</strong> and
+                        <strong>endValue</strong>. We create a variable (numbers) that holds an array. A
+                        <strong>for</strong> loop is used to generate all of the numbers between
+                        <strong>startValue</strong> and <strong>endValue</strong>.</p>
 
-                        <p><strong>displayNumbers</strong> takes in one parameter: <strong>numberArray</strong>. The
-                            variable <strong>numbers</strong> is an array that holds the values between
-                            <strong>startValue</strong> and <strong>endValue</strong>. The <strong>className</strong>
-                            variable holds the name of a CSS class that targets all of the even-numbered digits and
-                            displays them in <strong>bold</strong> font. The variable <strong>templateRows</strong>
-                            holds the HTML that is written to the page.</p>
+                    <p><strong>displayNumbers</strong> takes in one parameter: <strong>numberArray</strong>. The
+                        variable <strong>numbers</strong> is an array that holds the values between
+                        <strong>startValue</strong> and <strong>endValue</strong>. The <strong>className</strong>
+                        variable holds the name of a CSS class that targets all of the even-numbered digits and
+                        displays them in <strong>bold</strong> font. The variable <strong>templateRows</strong>
+                        holds the HTML that is written to the page.</p>
 
-                        <p>A <strong>for</strong> loop is used to check all of the numbers to see if they are even or
-                            odd. The <strong>remainder</strong> operator (<strong>%</strong>) is used to see which of those digits are
-                            divisible by two. If the operator returns a value of zero, it determines that the number is
-                            even. If not (<strong>else</strong>), then the digit is identified as odd. The correct
-                            <strong>className</strong> is injected into the HTML row for display. Each interation of the
-                            loop adds to the <strong>templateRows</strong> variable. At the end of the loop the
-                            resulting HTML rows are written to the page.</p>
-                    </div>
+                    <p>A <strong>for</strong> loop is used to check all of the numbers to see if they are even or
+                        odd. The <strong>remainder</strong> operator (<strong>%</strong>) is used to see which of
+                        those digits are
+                        divisible by two. If the operator returns a value of zero, it determines that the number is
+                        even. If not (<strong>else</strong>), then the digit is identified as odd. The correct
+                        <strong>className</strong> is injected into the HTML row for display. Each interation of the
+                        loop adds to the <strong>templateRows</strong> variable. At the end of the loop the
+                        resulting HTML rows are written to the page.</p>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <footer class="footer mt-auto py-3 bg-dark">
-        <div class="container-fluid text-center text-light">
-            <div class="row row-cols-1 row-cols-lg-3">
-                <div class="col">
-                    &copy2021 <span class="text-light">Matt Lane | <img src="/img/Favicon-small.png" alt="Matt Lane"
-                            class="img-fluid"> | matthewjlane.47@gmail.com
-                    </span>
-                </div>
-                <div class="col">
-                </div>
-                <div class="col">
-                    <a href="#" target="_blank"><span class="iconify" data-icon="logos:linkedin-icon"
-                            data-inline="false"></span></a>
-                    <a href="#" target="_blank"><span class="iconify" data-icon="akar-icons:github-fill"
-                            data-inline="false" style="color: #7a319a"></span></a>
-                    <a href="#" target="_blank"><span class="iconify" data-icon="logos:twitter"
-                            data-inline="false"></span></a>
-                    <a href="#" target="_blank"><span class="iconify" data-icon="logos:youtube-icon"
-                            data-inline="false"></span></a>
-                </div>
+<footer class="footer mt-auto py-3 bg-dark">
+    <div class="container-fluid text-center text-light">
+        <div class="row row-cols-1 row-cols-lg-3">
+            <div class="col">
+                &copy2021 <span class="text-light">Matt Lane | <img src="/img/Favicon-small.png" alt="Matt Lane"
+                        class="img-fluid"> | matthewjlane.47@gmail.com
+                </span>
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+                <a href="#" target="_blank"><span class="iconify" data-icon="logos:linkedin-icon"
+                        data-inline="false"></span></a>
+                <a href="#" target="_blank"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="false"
+                        style="color: #7a319a"></span></a>
+                <a href="#" target="_blank"><span class="iconify" data-icon="logos:twitter"
+                        data-inline="false"></span></a>
+                <a href="#" target="_blank"><span class="iconify" data-icon="logos:youtube-icon"
+                        data-inline="false"></span></a>
             </div>
         </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
-    <script src="/js/prism.js"></script>
-    <script src="/js/site.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
-        integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+</script>
+<script src="/js/prism.js"></script>
+<script src="/js/site.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+    integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
 
