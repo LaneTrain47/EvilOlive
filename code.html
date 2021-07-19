@@ -47,7 +47,7 @@
 <main class="flex-shrink-0">
     <div class="container mt-3">
         <div class="row">
-            <div class="col-6">
+            <div class="col-8">
                 <div class="row">
                     <div class="col border-bottom border-dark text-center">
                         <h1>What makes this olive so evil?</h1>
@@ -55,35 +55,133 @@
                 </div>
                 <div class="row">
                     <div class="col mt-3">
-
-                        <div class="row">
-                            <img src="/img/Olive01.png" alt="">
-                        </div>
+                        <pre><code class="language-javascript">
+                            function getNumbers() {
+                                //access the webpage and get the values from the inputs
+                                let startValue = document.getElementById("startValue").value;
+                                let endValue = document.getElementById("endValue").value;
+                            
+                                //parseInt is used to convert a string number to a number number
+                                let newStart = parseInt(startValue);
+                                let newEnd = parseInt(endValue);
+                            
+                                //create a Boolean variable to check for an error state
+                                //we start with false so that it does not trigger
+                                let errorState = false;
+                                //create an empty string that will store any error messages generated
+                                let errorMsg = "";
+                            
+                                //make sure the user entered 2 numbers
+                                //isNaN is a built-in JS function that returns true if the variable is 'not a number'
+                                if (isNaN(newStart) || isNaN(newEnd)) {
+                                    //change errorState to true
+                                    errorState = true;
+                                    //add a specific error message to the empty string
+                                    errorMsg += "Please use numbers&lt;hr/>";
+                                }
+                            
+                                //make sure that the start value is less than the end value
+                                if (newStart > newEnd) {
+                                    //change errorState to true
+                                    errorState = true;
+                                    //add a specific error message to the empty string
+                                    errorMsg += "Start value must be less than end value&lt;hr/>";
+                                }
+                            
+                                //Set an upper and lower bound for the loops
+                                //This is an optional addition that improves the user experience
+                                if (newStart > 10000 || newStart &lt; -10000 || newEnd > 10000 || newEnd &lt; -10000) {
+                                    //change errorState to true
+                                    errorState = true;
+                                    //add a specific error message to the empty string
+                                    errorMsg += "-10,000 and 10,000 are the limit&lt;hr/>";
+                                }
+                            
+                                //if any of the error cases happened fire a SweetAlert and exit the function
+                                if (errorState) {
+                                    Swal.fire(
+                                        'Something went wrong',
+                                        `${errorMsg}`,
+                                        'error'
+                                    );
+                                    return;
+                                }
+                                //take the start and end values as the bounds for a 'for' loop
+                                //that will create an array and return it
+                                let numbers = generateNumbers(newStart, newEnd);
+                            
+                                //take the array that was returned and pass it to a function that will 
+                                //display it
+                                displayNumbers(numbers);
+                            }
+                            
+                            //Wrapper function/method - a function that calls other functions
+                            
+                            function generateNumbers(startValue, endValue) {
+                                let numbers = [];
+                            
+                                //loop over every number from startValue to endValue
+                                for (let index = startValue; index &lt;= endValue; index++) {
+                                    numbers.push(index)
+                                }
+                            
+                                //send the array of numbers back to the wrapper function
+                                return numbers;
+                            }
+                            
+                            
+                            //this function exists to display the results to the user
+                            function displayNumbers(numbers) {
+                                //create a string to hold a class name based on even or odd
+                                let className = "even";
+                                //create a string that will hold our output
+                                let templateRows = "";
+                            
+                                //go through each number in the array and determine if that number is even or odd
+                                //the '%' modulus operand returns the reaminder from division
+                                //ex. 3 % 2 = 1
+                                //ex. 100 % 5 = 0
+                                for (let index = 0; index &lt; numbers.length; index++) {
+                                    let number = numbers[index];
+                            
+                                    if (number % 2 == 0) {
+                                        className = "even";
+                                    } else {
+                                        className = "odd";
+                                    }
+                            
+                                    //use string concatenation to create a long string of HTML to display
+                                    templateRows = templateRows + `&lt;tr>&lt;td class="${className}">${number}&lt;/td>&lt;/tr>`;
+                                }
+                            
+                                document.getElementById("output").innerHTML = templateRows;
+                            }
+                        </code></pre>
                     </div>
                 </div>
             </div>
             <div class="col-1"></div>
-            <div class="col-5">
+            <div class="col-3">
                 <div class="row mt-5">
-                    <p>The code is structured in three functions:
-                    </p>
+                    <p>The code is structured in three functions:</p>
+                    <p></p>
                     <p><strong>getValues</strong> accepts(gets) the user input from the page. It utilizes
                         <strong>getElementById</strong> to pull the values from the page. It passes those values to
                         the <strong>generateNumbers</strong> function, which returns an array of values and passes
                         that array to the <strong>displayNumbers</strong> function.</p>
-
+                    <p></p>
                     <p><strong>generateNumbers</strong> takes in two parameters: <strong>startValue</strong> and
                         <strong>endValue</strong>. We create a variable (numbers) that holds an array. A
                         <strong>for</strong> loop is used to generate all of the numbers between
                         <strong>startValue</strong> and <strong>endValue</strong>.</p>
-
+                    <p></p>
                     <p><strong>displayNumbers</strong> takes in one parameter: <strong>numberArray</strong>. The
                         variable <strong>numbers</strong> is an array that holds the values between
                         <strong>startValue</strong> and <strong>endValue</strong>. The <strong>className</strong>
                         variable holds the name of a CSS class that targets all of the even-numbered digits and
                         displays them in <strong>bold</strong> font. The variable <strong>templateRows</strong>
                         holds the HTML that is written to the page.</p>
-
+                    <p></p>
                     <p>A <strong>for</strong> loop is used to check all of the numbers to see if they are even or
                         odd. The <strong>remainder</strong> operator (<strong>%</strong>) is used to see which of
                         those digits are
