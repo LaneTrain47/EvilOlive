@@ -1,68 +1,56 @@
 //get user input -- CONTROLLER FUNCTION
 function getValue() {
-    //read user input from the field on the web page
-    let userInput = document.getElementById("userInput").value;
+
+    //Ensures that the class properties of target element are read 
+    //first so that they are applied when the page loads.
+    document.getElementById("alert").classList.add("invisible")
+
+    //Reads user input from the field on the web page.
+    let userString = document.getElementById("userString").value;
+
+    //reverses the user input
+    let revString = reverseString(userString);
+
+    //Displays what the user typed, but backward.
+    displayString(revString);
 }
 
 //reverse the string -- LOGIC FUNCTION
-function reverseString() {
+function reverseString(userString) {
+
+    //Defines revString as an array, which gives the ability to assign
+    //array functionality to the characters the user entered.    
+    let revString = [];
+
+    //As a string is also an array, and arrays have numerical indices,
+    //a for loop can be used to read and then reverse those indices.
+    //To determine the last position in an array with an unknown number of
+    //characters, use userString.length - 1.
+    for (let index = userString.length - 1; index >= 0; index--) {
+        revString += userString[index];
+    }
+
+    return revString;
 
 }
 
-//display the reversed user input -- VIEW FUNCTION
-function displayMessage() {
+//Display the reversed user input -- VIEW FUNCTION
+function displayString(revString) {
 
-}
+    //removes spaces, ignores punctuation
+    //let regex = /[^a-zA-Z0-9]/gi;
+    //userString = userString.replace(regex, "");
 
+    //converts all characters to lowercase
+    //userString = userString.toLowerCase();
 
+    //Writes a message that will be seen by the user on the app page.
+    document.getElementById("alert").innerHTML = `Your string reversed is: ${revString}`;
 
+    //The alert that was made invisible in line 6 above now needs to 
+    //be made visible again. Specify the specific classList to remove
+    //by using .remove followed by parentheses containing the name of the 
+    //class you wish to eliminate contained in quotation marks.
+    document.getElementById("alert").classList.remove("invisible");
 
-
-
-
-
-
-
-//removes spaces, ignores punctuation
-let regex = /[^a-zA-Z0-9]/gi;
-userInput = userInput.replace(regex, "");
-
-//converts all characters to lowercase
-userInput = userInput.toLowerCase();
-
-//check for a palindrome
-let returnObj = checkForPalindrome(userInput);
-
-//display a message in response to a button click
-displayMessage(returnObj);
-
-
-//evaluate user input and determine if the phrase entered is 
-//the same when read both backward and forward
-function checkForPalindrome(userInput) {
-
-
-}
-
-
-let revString = [];
-let returnObj = {};
-
-for (let index = userInput.length - 1; index >= 0; index--) {
-    revString += userInput[index];
-}
-if (revString == userInput) {
-    returnObj.msg = "Your olive is evil! You entered a palindrome."
-} else {
-    returnObj.msg = "Sorry, your olive is not evil. Your phrase is not a palindrome."
-}
-returnObj.reversed = revString;
-
-return returnObj;
-
-//display a message
-function displayMessage() {
-
-    document.getElementById("alertHeader").innerHTML = returnObj.msg;
-}
 }
