@@ -1,21 +1,26 @@
-//get user input -- CONTROLLER FUNCTION
+//Get user input -- CONTROLLER FUNCTION
 function getValue() {
 
     //Ensures that the class properties of target element are read 
     //first so that they are applied when the page loads.
     document.getElementById("alert").classList.add("invisible")
 
-    //Reads user input from the field on the web page.
-    let userString = document.getElementById("userString").value;
+    //Reads user input from the field on the web page. Removes
+    //capitalization for easier readability.
+    let userString = document.getElementById("userString").value.toLowerCase();
 
-    //reverses the user input
+    //Removes punctuation
+    let regex = /[^a-zA-Z0-9]/gi;
+    userString = userString.replace(regex, "");
+
+    //Reverses the user input
     let revString = reverseString(userString);
 
     //Displays what the user typed, but backward.
     displayString(revString);
 }
 
-//reverse the string -- LOGIC FUNCTION
+//Reverse the string -- LOGIC FUNCTION
 function reverseString(userString) {
 
     //Defines revString as an array, which gives the ability to assign
@@ -37,15 +42,8 @@ function reverseString(userString) {
 //Display the reversed user input -- VIEW FUNCTION
 function displayString(revString) {
 
-    //removes spaces, ignores punctuation
-    //let regex = /[^a-zA-Z0-9]/gi;
-    //userString = userString.replace(regex, "");
-
-    //converts all characters to lowercase
-    //userString = userString.toLowerCase();
-
     //Writes a message that will be seen by the user on the app page.
-    document.getElementById("alert").innerHTML = `Your string reversed is: ${revString}`;
+    document.getElementById("alert").innerHTML = `When reversed, your phrase is: ${revString}`;
 
     //The alert that was made invisible in line 6 above now needs to 
     //be made visible again. Specify the specific classList to remove
