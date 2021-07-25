@@ -117,31 +117,37 @@ function displayString(revString) {
             <div class="col-1"></div>
             <div class="col-3">
                 <div class="row mt-5">
-                    <p>The code is structured in three functions:</p>
+                    <p>The JavaScript code at left contains three basic segments:</p>
+                    <p><strong>-</strong> Controller Function</p>
+                    <p><strong>-</strong> Logic Function</p>
+                    <p><strong>-</strong> View Function</p>
                     <p></p>
-                    <p>The function named <strong>getValue</strong>
-                    </p>
+                    <p>The <strong>controller</strong> function lays the foundation for the JavaScript behavior. The
+                        text that the user submits is examined for punctuational characters and those characters are
+                        summarily removed; this is handled by way of the <strong>regex</strong> variable declaration.
+                        This makes the phrase that was entered more readable upon its reversal. Capitalization is also
+                        eliminated for this same reason, and this is performed by <strong>value.toLowerCase</strong>
+                        within the <strong>userString</strong> variable declaration. Finally, user input is reversed via
+                        the <strong>revString</strong> variable declaration, and displayed using
+                        <strong>displayString(revString)</strong>.</p>
                     <p></p>
-                    <p><strong>generateNumbers</strong> takes in two parameters: <strong>startValue</strong> and
-                        <strong>endValue</strong>. We create a variable (numbers) that holds an array. A
-                        <strong>for</strong> loop is used to generate all of the numbers between
-                        <strong>startValue</strong> and <strong>endValue</strong>.</p>
+                    <p>The <strong>logic</strong> function handles the reversal of the user input. The
+                        <strong>reverseString</strong> function is defined first so that it can hold both a
+                        <strong>variable</strong> and a <strong>for</strong> loop. The variable converts the user's
+                        input from a <strong>string</strong> to an <strong>array</strong>, which is done so that
+                        numerical indices can be assigned to whatever characters the user may decide to type. It is
+                        necessary to do this because there is no way to know in advance if the user is going to type 3
+                        characters or 30. But if the characters are instead identified by numerical values, it is far
+                        easier to create instruction within JavaScript that reverses those numerical values simply by
+                        counting down from the largest one within the array.</p>
                     <p></p>
-                    <p><strong>displayNumbers</strong> takes in one parameter: <strong>numberArray</strong>. The
-                        variable <strong>numbers</strong> is an array that holds the values between
-                        <strong>startValue</strong> and <strong>endValue</strong>. The <strong>className</strong>
-                        variable holds the name of a CSS class that targets all of the even-numbered digits and
-                        displays them in <strong>bold</strong> font. The variable <strong>templateRows</strong>
-                        holds the HTML that is written to the page.</p>
-                    <p></p>
-                    <p>A <strong>for</strong> loop is used to check all of the numbers to see if they are even or
-                        odd. The <strong>remainder</strong> operator (<strong>%</strong>) is used to see which of
-                        those digits are
-                        divisible by two. If the operator returns a value of zero, it determines that the number is
-                        even. If not (<strong>else</strong>), then the digit is identified as odd. The correct
-                        <strong>className</strong> is injected into the HTML row for display. Each interation of the
-                        loop adds to the <strong>templateRows</strong> variable. At the end of the loop the
-                        resulting HTML rows are written to the page.</p>
+                    <p>The last segment contains the code that makes up the <strong>view</strong> function. The
+                        instructions here simply call on the <strong>revString</strong> variable that was declared in
+                        the controller function above, and then writes the now-reversed user input into an
+                        <strong>alert</strong> that was heretofore set to a hidden value. The hidden value was definied
+                        via the addition of a <strong>classList</strong> of "invisible" that has now been removed. The
+                        user is now able to see the previously hidden text, which displays back to them the text that
+                        they entered, only now in reverse.</p>
                 </div>
             </div>
         </div>
@@ -159,12 +165,12 @@ function displayString(revString) {
             <div class="col">
             </div>
             <div class="col">
-                <a href="#" target="_blank"><span class="iconify" data-icon="logos:linkedin-icon"
-                        data-inline="false"></span></a>
-                <a href="#" target="_blank"><span class="iconify" data-icon="akar-icons:github-fill" data-inline="false"
-                        style="color: #7a319a"></span></a>
-                <a href="#" target="_blank"><span class="iconify" data-icon="logos:twitter"
-                        data-inline="false"></span></a>
+                <a href="https://www.linkedin.com/in/matt-lane-ab5588108/" target="_blank"><span class="iconify"
+                        data-icon="logos:linkedin-icon" data-inline="false"></span></a>
+                <a href="https://github.com/LaneTrain47" target="_blank"><span class="iconify"
+                        data-icon="akar-icons:github-fill" data-inline="false" style="color: #7a319a"></span></a>
+                <a href="https://twitter.com/LaneTrain47" target="_blank"><span class="iconify"
+                        data-icon="logos:twitter" data-inline="false"></span></a>
             </div>
         </div>
     </div>
