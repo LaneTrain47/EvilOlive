@@ -2,48 +2,67 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>EvilOlive | The App</title>
+    <!-- Displayed in browser tab -->
+    <title>EvilOlive | Home</title>
     <link rel="shortcut icon" type="image/x-icon" href="/img/AppIcon_browser-tab.png">
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- Prism CSS -->
     <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom style sheet -->
     <link rel="stylesheet" href="/css/site.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/site.css">
+
 </head>
 
 <body class="d-flex flex-column h-100" style="background-color:lightgray">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+    <!-- Nav bar at top of page -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
         <div class="container-fluid">
-            <img src="/img/AppIcon_small.png" alt="">
-            <a class="navbar-brand" href="index.html">EvilOlive</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+
+            <a class="navbar-brand" href="/index.html"><img src="img/AppIcon_small.png" width="55"
+                    class="d-inline-block me-2"> EvilOlive</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- Items within nav bar -->
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/app.html">The App</a>
+                        <a class="nav-link" href="app.html">The App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/code.html">The Code</a>
+                        <a class="nav-link" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://mattlane.info">About Me</a>
+                        <a class="nav-link" href="https://mattlane.info" target="_blank">About</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-
+    <!-- Main section -->
     <main class="flex-shrink-0">
         <div class="container mt-3">
             <div class="row">
@@ -107,44 +126,53 @@
         </div>
     </main>
 
+    <!-- Page footer -->
     <footer class="footer mt-auto py-3 bg-dark">
         <div class="container-fluid text-center text-light">
-            <div class="row row-cols-1 row-cols-lg-3">
-                <div class="col">
-                    &copy2021 <span class="text-light">Matt Lane | <img src="/img/Favicon_small.png" alt="Matt Lane"
-                            class="img-fluid"> | matthewjlane.47@gmail.com
-                    </span>
+            <div class="row row-cols-1 row-cols-lg-3 gy-2">
+
+                <div
+                    class="col col d-flex align-items-center justify-content-center justify-content-lg-center order-last order-lg-first">
+                    <div>
+                        <span class="text-muted">&copy2021</span> Matt Lane | matthewjlane.47@gmail.com
+                    </div>
                 </div>
-                <div class="col">
+
+                <div class="col d-flex align-items-center justify-content-center justify-content-lg-center">
+                    <img src="/img/MattLane(white).png" height="35">
                 </div>
-                <div class="col">
-                    <a href="https://www.linkedin.com/in/matt-lane-ab5588108/" target="_blank"><span class="iconify"
-                            data-icon="logos:linkedin-icon" data-inline="false"></span></a>
-                    <a href="https://github.com/LaneTrain47" target="_blank"><span class="iconify"
-                            data-icon="akar-icons:github-fill" data-inline="false" style="color: #7a319a"></span></a>
-                    <a href="https://twitter.com/LaneTrain47" target="_blank"><span class="iconify"
-                            data-icon="logos:twitter" data-inline="false"></span></a>
+
+                <div class="col d-flex align-items-center justify-content-center justify-content-lg-end">
+                    <div class="row">
+
+                        <div class="col linkedin social"><a href="https://www.linkedin.com/in/matt-lane-ab5588108/"><i
+                                    class="fab fa-linkedin fa-2x" target="_blank"></i></a></div>
+
+                        <div class="col github social"><a href="https://github.com/LaneTrain47"><i
+                                    class="fab fa-github fa-2x" target="_blank"></i></a></div>
+
+                        <div class="col twitter social"><a href="https://twitter.com/LaneTrain47"><i
+                                    class="fab fa-twitter fa-2x" target="_blank"></i></a></div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Scripts to drive JavaScript behavior -->
     <script src="/js/prism.js"></script>
     <script src="/js/site.js"></script>
+
     <script>
         document.getElementById("btnSubmit").addEventListener("click", getValue)
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
-        integrity="sha512-RXf+QSDCUQs5uwRKaDoXt55jygZZm2V++WUZduaU/Ui/9EGp3f/2KZVahFZBKGH0s774sd3HmrhUy+SgOFQLVQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
