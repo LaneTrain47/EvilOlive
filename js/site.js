@@ -1,54 +1,150 @@
-//Get user input -- CONTROLLER FUNCTION
-function getValue() {
+//get starting values from the screen
+//Controller Function
+function getUserString() {
+    //Get the user's input
+    let userString = document.getElementById("userString").value;
 
-    //Ensures that the class properties of target element are read 
-    //first so that they are applied when the page loads.
-    document.getElementById("alert").classList.add("invisible")
+    //Reverse the user's input - separate function
+    let revString = reverseStringA(userString);
 
-    //Reads user input from the field on the web page. Removes
-    //capitalization for easier readability.
-    let userString = document.getElementById("userString").value.toLowerCase();
+    //Compare original input and reversed input - separate function
+    let result = compareStringsA(userString, revString);
 
-    //Removes punctuation
-    let regex = /[^a-zA-Z0-9]/gi;
-    userString = userString.replace(regex, "");
+    //Output Result - separate function
+    displayDataB(result, userString, revString);
 
-    //Reverses the user input
-    let revString = reverseString(userString);
+};
 
-    //Displays what the user typed, but backward.
-    displayString(revString);
+function reverseStringA(userString) {
+    let startValue = userString.length - 1;
+    let endValue = 0;
+
+    //User input = Frank
+    //Frank is a string AND an array of characters
+    //[F, r, a, n, k]
+
+    let revString = "";
+
+    //In a decremented for loop the startValue must be higher than the endValue
+    for (let i = startValue; i >= endValue; i--) {
+        revString += userString[i];
+    };
+
+    //Loop 1 - "k"
+    //Loop 2 - "kn"
+    //Loop 3 - "kna"
+    //Loop 4 - "knar"
+    //Loop 5 - "knarF"
+    return revString
 }
 
-//Reverse the string -- LOGIC FUNCTION
-function reverseString(userString) {
+function reverseStringB(userString) {
+    //Tall code using intermediate variables for troubleshooting
+    let splitArray = userString.split("");
+    let revArray = splitArray.reverse();
+    let rejoinArray = revArray.join("");
 
-    //Defines revString as an array, which gives the ability to assign
-    //array functionality to the characters the user entered.    
-    let revString = [];
-
-    //As a string is also an array, and arrays have numerical indices,
-    //a for loop can be used to read and then reverse those indices.
-    //To determine the last position in an array with an unknown number of
-    //characters, use userString.length - 1.
-    for (let index = userString.length - 1; index >= 0; index--) {
-        revString += userString[index];
-    }
-
-    return revString;
-
+    //Uses array functions to reverse the string
+    return userString.split('').reverse().join("");
 }
 
-//Display the reversed user input -- VIEW FUNCTION
-function displayString(revString) {
 
-    //Writes a message that will be seen by the user on the app page.
-    document.getElementById("alert").innerHTML = `When reversed, your phrase is: ${revString}`;
+function compareStringsA(userString, revString) {
+    //This is the work part
+    //A != a
+    //Normalize the case
+    //Extra credit - "A man, a plan, a canal; Panama" - is a palindrome when the spaces and special character
+    //  are removed
+    //RegEx is used for this - Google is your friend
+    let cleanUser = userString.replace(/[^A-Z0-9]/ig, "");
+    let cleanRev = revString.replace(/[^A-Z0-9]/ig, "");
 
-    //The alert that was made invisible in line 6 above now needs to 
-    //be made visible again. Specify the specific classList to remove
-    //by using .remove followed by parentheses containing the name of the 
-    //class you wish to eliminate contained in quotation marks.
-    document.getElementById("alert").classList.remove("invisible");
+    let normalUser = cleanUser.toLowerCase();
+    let normalRev = cleanRev.toLowerCase();
 
-}
+    //== tests for equal value
+    // a == a
+    // 10 == 10
+    // "10" == 10
+
+    //=== tests for equal value and type
+    // a === a - true
+    // 10 === 10 - true
+    // "10" === 10 - false
+
+    if (normalUser == normalRev) {
+        return "was a palindrome";
+    } else {
+        return "was not a palindrome";
+    };
+};
+
+function compareStringsB(userString, revString) {
+    //This is the work part
+    //A != a
+    //Normalize the case
+    //Extra credit - "A man, a plan, a canal; Panama" - is a palindrome when the spaces and special character
+    //  are removed
+    //RegEx is used for this - Google is your friend
+
+    //No functional difference, written wide not tall
+    let normalUser = userString.toLowerCase().replace(/[^A-Z0-9]/ig, "");
+    let normalRev = revString.toLowerCase().replace(/[^A-Z0-9]/ig, "");
+
+    //== tests for equal value
+    // a == a
+    // 10 == 10
+    // "10" == 10
+
+    //=== tests for equal value and type
+    // a === a - true
+    // 10 === 10 - true
+    // "10" === 10 - false
+
+    if (normalUser == normalRev) {
+        return "was a palindrome";
+    } else {
+        return "was not a palindrome";
+    };
+};
+
+function compareStringsC(userString, revString) {
+    const regEx = /[^A-Z0-9]/ig;
+
+    //This is the work part
+    //A != a
+    //Normalize the case
+    //Extra credit - "A man, a plan, a canal; Panama" - is a palindrome when the spaces and special character
+    //  are removed
+    //RegEx is used for this - Google is your friend
+
+    //No functional difference, written wide not tall set the RegEx as a variable
+    let normalUser = userString.toLowerCase().replace(regEx, "");
+    let normalRev = revString.toLowerCase().replace(regEx, "");
+
+    //== tests for equal value
+    // a == a
+    // 10 == 10
+    // "10" == 10
+
+    //=== tests for equal value and type
+    // a === a - true
+    // 10 === 10 - true
+    // "10" === 10 - false
+
+    if (normalUser == normalRev) {
+        return "was a palindrome";
+    } else {
+        return "was not a palindrome";
+    };
+};
+
+function displayDataA(result, userString, revString) {
+    //We want to output three things
+    //1. The original input
+    //2. The reversed input
+    //3. Was it a palindrome
+    let output = document.getElementById("results");
+
+    output.innerHTML = `After reversing your string I found that it ${result}<br />You entered ${userString}<br />Reversed was ${revString}`;
+};
